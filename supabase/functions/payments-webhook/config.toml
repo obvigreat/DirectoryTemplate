@@ -1,0 +1,4 @@
+# This configuration file enables the webhook to be invoked without JWT verification
+# This is necessary for Stripe webhooks which don't provide a JWT
+
+verify_jwt = false
