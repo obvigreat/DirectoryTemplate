@@ -400,7 +400,7 @@ export default function AiListingBuilder() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold">AI-Enhanced Listing Builder</h2>
-        <div className="text-sm text-blue-600 flex items-center">
+        <div className="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded-full flex items-center font-medium">
           <Sparkles className="h-4 w-4 mr-1" />
           AI-Powered
         </div>
@@ -531,16 +531,16 @@ export default function AiListingBuilder() {
               type="button"
               onClick={generateListing}
               disabled={generating || !isInputValid()}
-              className="w-full"
+              className="w-full bg-purple-600 hover:bg-purple-700 py-6 text-lg font-medium"
             >
               {generating ? (
                 <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />{" "}
+                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />{" "}
                   Generating...
                 </>
               ) : (
                 <>
-                  <Sparkles className="mr-2 h-4 w-4" /> Generate Listing
+                  <Sparkles className="mr-2 h-5 w-5" /> Generate Listing with AI
                 </>
               )}
             </Button>
@@ -840,7 +840,11 @@ export default function AiListingBuilder() {
                   </Button>
                 </div>
 
-                <Button type="submit" disabled={loading}>
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="px-5 bg-green-600 hover:bg-green-700"
+                >
                   {loading ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />{" "}

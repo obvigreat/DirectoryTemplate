@@ -149,8 +149,18 @@ export default function TraditionalListingForm() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold">Create New Listing</h2>
-        <div className="text-sm text-muted-foreground">
-          Step {currentStep} of 4
+        <div className="flex items-center bg-blue-50 px-3 py-1 rounded-full">
+          <div className="flex space-x-1 mr-2">
+            {[1, 2, 3, 4].map((step) => (
+              <div
+                key={step}
+                className={`w-2 h-2 rounded-full ${currentStep >= step ? "bg-blue-600" : "bg-gray-300"}`}
+              />
+            ))}
+          </div>
+          <div className="text-sm font-medium text-blue-700">
+            Step {currentStep} of 4
+          </div>
         </div>
       </div>
 
@@ -328,27 +338,41 @@ export default function TraditionalListingForm() {
           </div>
         )}
 
-        <div className="flex justify-between pt-4 border-t">
-          <div>
+        <div className="flex justify-between pt-6 border-t mt-6">
+          <div className="flex items-center space-x-3">
             {currentStep > 1 && (
-              <Button type="button" variant="outline" onClick={prevStep}>
-                Back
+              <Button
+                type="button"
+                variant="outline"
+                onClick={prevStep}
+                className="px-4"
+              >
+                <ArrowRight className="mr-2 h-4 w-4 rotate-180" /> Back
               </Button>
             )}
 
             {currentStep === 4 && (
-              <div className="inline-block ml-2">
+              <div className="inline-block">
                 <ListingFormPreview formData={formData} />
               </div>
             )}
           </div>
 
           {currentStep < 4 ? (
-            <Button type="button" onClick={nextStep} disabled={!isStepValid()}>
+            <Button
+              type="button"
+              onClick={nextStep}
+              disabled={!isStepValid()}
+              className="px-5 bg-blue-600 hover:bg-blue-700"
+            >
               Next <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           ) : (
-            <Button type="submit" disabled={loading}>
+            <Button
+              type="submit"
+              disabled={loading}
+              className="px-5 bg-green-600 hover:bg-green-700"
+            >
               {loading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />{" "}

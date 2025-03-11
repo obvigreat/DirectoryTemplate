@@ -223,6 +223,78 @@ export type Database = {
         }
         Relationships: []
       }
+      documents: {
+        Row: {
+          analysis: Json | null
+          created_at: string | null
+          file_name: string
+          file_path: string
+          file_size: number
+          file_type: string
+          file_url: string
+          id: string
+          processed_at: string | null
+          status: string
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          analysis?: Json | null
+          created_at?: string | null
+          file_name: string
+          file_path: string
+          file_size: number
+          file_type: string
+          file_url: string
+          id: string
+          processed_at?: string | null
+          status?: string
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          analysis?: Json | null
+          created_at?: string | null
+          file_name?: string
+          file_path?: string
+          file_size?: number
+          file_type?: string
+          file_url?: string
+          id?: string
+          processed_at?: string | null
+          status?: string
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      listing_analysis_master: {
+        Row: {
+          analysis: Json
+          created_at: string | null
+          document_ids: string[]
+          id: string
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          analysis: Json
+          created_at?: string | null
+          document_ids: string[]
+          id?: string
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          analysis?: Json
+          created_at?: string | null
+          document_ids?: string[]
+          id?: string
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       listing_tags: {
         Row: {
           created_at: string | null
