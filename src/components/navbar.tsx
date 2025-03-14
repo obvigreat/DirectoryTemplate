@@ -30,6 +30,7 @@ import {
   Tag,
   CreditCard,
   LayoutDashboard,
+  FileText,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useAuth } from "./auth-state-provider";
@@ -70,6 +71,16 @@ function Navbar() {
       name: "Categories",
       href: "/categories",
       icon: <Tag className="w-4 h-4 mr-2" />,
+    },
+    {
+      name: "Community",
+      href: "/community",
+      icon: <MessageSquare className="w-4 h-4 mr-2" />,
+    },
+    {
+      name: "Blog",
+      href: "/blog",
+      icon: <FileText className="w-4 h-4 mr-2" />,
     },
     {
       name: "Pricing",

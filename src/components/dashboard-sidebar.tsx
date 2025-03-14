@@ -144,6 +144,16 @@ export default function DashboardSidebar() {
       icon: <MapPin className="w-5 h-5" />,
     },
     {
+      title: "Community Forum",
+      href: "/community",
+      icon: <MessageSquare className="w-5 h-5" />,
+    },
+    {
+      title: "Blog & Articles",
+      href: "/blog",
+      icon: <FileText className="w-5 h-5" />,
+    },
+    {
       title: "Return to Home",
       href: "/",
       icon: <Home className="w-5 h-5" />,
